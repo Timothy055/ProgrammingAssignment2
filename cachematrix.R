@@ -27,7 +27,6 @@ makeCacheMatrix <- function(x = matrix()) {
 # need to be calculated many times.
 # See test_cache_matrix.R for a simple benchmark program of calculating a cacheMatrix
 # inverse repeatedly versus a normal matrix.
-
 cacheSolve <- function(x, ...) {
   ## Return a matrix that is the inverse of 'x'
   xInv <- x$getInverse()
