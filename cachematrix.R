@@ -4,7 +4,7 @@
 # These functions trade memory for speed by saving the inverted matrices in a hidden
 # vector in the cacheMatrix created by makeCacheMatrix.
 
-# This function returns a matrix that can cache its inverse.
+# This function returns a cacheMatrix that can cache its inverse.
 makeCacheMatrix <- function(x = matrix()) {
   xInv <- NULL
   set <- function(y) {
@@ -21,11 +21,11 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-# This functions calculates the inverse of a cache matrix. If the inverse has 
+# This functions calculates the inverse of a cacheMatrix. If the inverse has 
 # previously been calulated it will return the inverse immediately without
-# caching it. This can be used as a performance optimization when the inverse may
-# need to be calculated many times.
-# See test_cache_matrix.R for a simple benchmark program of calculating a cacheMatrix
+# recalculating it. This can be used as a performance optimization when the inverse may
+# need to be recalculated many times.
+# Note: See test_cache_matrix.R for a simple benchmark program of calculating a cacheMatrix
 # inverse repeatedly versus a normal matrix.
 cacheSolve <- function(x, ...) {
   ## Return a matrix that is the inverse of 'x'
